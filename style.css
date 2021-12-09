@@ -22,9 +22,9 @@ div#entry-text > nav > a {
     color: white;
     text-decoration: none;
     font-weight: bold;
+    font-size: 1.5vw;
     margin: 0 1em;
 }
-
 
 .card{
     height: 60vh;
