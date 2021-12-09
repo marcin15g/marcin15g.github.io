@@ -3,14 +3,24 @@
     padding: 0;
     box-sizing: border-box;
 }
-html,body {
-    /* overflow: hidden; */
-}
-main {
-    margin-top: 100vh;
+div#entry-text {
+    background: transparent;
+    width: 100vw;
     height: 100vh;
-    background: linear-gradient(#fff, rgb(134, 134, 134))
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+div#entry-text > h1 {
+    font-size: 10vw;
+    color: white;
+}
+div#about-me {
+    height: 100vh;
+    background: linear-gradient(135deg,#fff, #000);
+}
+
 canvas#main-canvas {
     position: fixed;
     z-index: -1;

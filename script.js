@@ -1,12 +1,7 @@
-// window.onload = () => {
-//     window.scrollTo({top: 0})
-// }
+window.addEventListener('scroll', () => {
+    const canvas = document.getElementById('main-canvas');
+    const entryText = document.getElementById('entry-text');
 
-// window.addEventListener('scroll', () => {
-//     console.log("SCROLL!!");
-//     const main = document.getElementsByTagName('main')[0];
-//     if(main) {
-//         console.log(main);
-//         main.scrollIntoView();
-//     }
-// })
+    if(canvas) canvas.style.transform = `translateY(${-window.scrollY / 3}px)`;
+    // if(entryText) entryText.style.transform = `translateY(${-window.scrollY / 3}px)`;
+})
