@@ -24,6 +24,7 @@ window.addEventListener('click', (e) => {
     const dirY = (Math.random() * 5) - 3;
     const color = 'rgb(255, 153, 0)';
 
+    if(particlesArray.length > 250) particlesArray.shift()
     particlesArray.push(new Particle(x, y, dirX, dirY, size, color, true))
 })
 
@@ -67,7 +68,7 @@ class Particle {
 }
 
 const init = () => {
-    const numOfParticles = 150//(canvas.width * canvas.height) / 15000;
+    const numOfParticles = 150 //(canvas.width * canvas.height) / 15000;
     for(let i = 0; i < numOfParticles; i++) {
         const size = (Math.random() * 5 + 1)
         const x = (Math.random() * ((canvas.width - size * 2) - (size * 2)) + size * 2);
