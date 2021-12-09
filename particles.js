@@ -2,7 +2,7 @@ const canvas = document.getElementById('main-canvas');
 const ctx = canvas.getContext('2d');
 
 canvas.width = window.innerWidth * 2;
-canvas.height = window.innerHeight * 2;
+canvas.height = window.innerHeight * 4;
 
 let particlesArray = [];
 
@@ -18,7 +18,7 @@ window.addEventListener('mousemove', (e) => {
 
 window.addEventListener('resize', () => {
     canvas.width = window.innerWidth * 2;
-    canvas.height = window.innerHeight * 2;
+    canvas.height = window.innerHeight * 4;
 
     particlesArray = [];
     init();

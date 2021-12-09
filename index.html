@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,13 +8,24 @@
     <link rel="stylesheet" href="style.css">
     <title>Marcin's Porfolio</title>
 </head>
+
 <body>
     <canvas id="main-canvas"></canvas>
     <main>
-        <div id="entry-text"><h1>HELLO!</h1></div>
-        <div id="about-me"></div>
+        <div id="entry-text">
+            <h1>HELLO!</h1>
+            <nav>
+                <a href="#about-me">[ about me ]</a>
+                <a href="#my-projects">[ my projects ]</a>
+                <a href="#contact">[ contact ]</a>
+            </nav>
+        </div>
+        <div id="about-me" class="card"></div>
+        <div id="my-projects" class="card"></div>
+        <div id="contact" class="card"></div>
     </main>
     <script src="script.js"></script>
-   <script src="particles.js"></script>
+    <script src="particles.js"></script>
 </body>
+
 </html>
