@@ -13,17 +13,27 @@
 <body>
     <canvas id="main-canvas"></canvas>
     <main>
-        <div id="entry-text">
-            <h1>HELLO!</h1>
+        <section id="entry-text">
+            <h1>marcin grzebyk</h1>
+            <h2>FULLSTACK DEVELOPER</h2>
             <nav>
-                <a href="#about-me">[ about me ]</a>
-                <a href="#my-projects">[ my projects ]</a>
-                <a href="#contact">[ contact ]</a>
+                <a href="#about-me">[<span> about me </span>]</a>
+                <!-- <a href="#about-me"><span>[</span> about me <span>]</span></a> -->
+                <a href="#my-projects">[<span> my projects </span>]</a>
+                <a href="#contact">[<span> contact </span>]</a>
             </nav>
-        </div>
-        <div id="about-me" class="card"></div>
-        <div id="my-projects" class="card"></div>
-        <div id="contact" class="card"></div>
+        </section>
+        <section id="about-me" class="card fadeup">
+            <div class="text fadeup fade-delay fadeup-move">
+                <h3>Hello!</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac est ac justo bibendum finibus. Morbi at purus sodales, interdum ex et, fermentum risus. Nulla ultricies, nisi vitae placerat vulputate, nisi sapien luctus est, eu scelerisque diam est sed tellus. Curabitur tellus enim, eleifend sed dolor in, sollicitudin molestie metus. Ut id elit varius, tempor libero sit amet, fermentum nisl. </p></div>
+            <div class="photo fadeup fade-delay fadeup-move">
+                <img src="assets/portrait.jpg" alt="portrait" >
+            </div>
+        </section>
+        <section id="my-projects" class="card fadeup">
+        </section>
+        <section id="contact" class="card">CONTACT INFO GOES HERE</section>
     </main>
     <script src="script.js"></script>
     <script src="particles.js"></script>

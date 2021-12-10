@@ -17,11 +17,12 @@ window.addEventListener('mousemove', (e) => {
 })
 
 window.addEventListener('click', (e) => {
-    const size = (Math.random() * 10 + 5)
+    console.log(window.canvasTop)
+    const size = (Math.random() * 5 + 2)
     const x = e.x * 2;
-    const y = e.y * 2 + window.scrollY;
-    const dirX = (Math.random() * 5) - 3;
-    const dirY = (Math.random() * 5) - 3;
+    const y = e.y * 2 - (window.canvasTop * 2 || 0);
+    const dirX = (Math.random() * 5) - 2;
+    const dirY = (Math.random() * 5) - 2;
     const color = 'rgb(255, 153, 0)';
 
     if(particlesArray.length > 250) particlesArray.shift()
@@ -68,14 +69,14 @@ class Particle {
 }
 
 const init = () => {
-    const numOfParticles = 150 //(canvas.width * canvas.height) / 15000;
+    const numOfParticles = (canvas.width * canvas.height) / 70000;
     for(let i = 0; i < numOfParticles; i++) {
         const size = (Math.random() * 5 + 1)
         const x = (Math.random() * ((canvas.width - size * 2) - (size * 2)) + size * 2);
         const y = (Math.random() * ((canvas.height - size * 2) - (size * 2)) + size * 2);
-        const dirX = (Math.random() * 5) - 3;
-        const dirY = (Math.random() * 5) - 3;
-        const color = '#fff';
+        const dirX = (Math.random() * 2) - 1;
+        const dirY = (Math.random() * 2) - 1;
+        const color = i % 3 === 0 ? 'rgb(255,153,0)' : 'rgb(200,200,200)';
 
         particlesArray.push(new Particle(x, y, dirX, dirY, size, color))
     }
@@ -96,10 +97,12 @@ const connect = () => {
             const distanceX = (particlesArray[a].x - particlesArray[b].x) * (particlesArray[a].x - particlesArray[b].x);
             const distanceY = (particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y);
             const distance = distanceX + distanceY;
-            if(distance < ((canvas.width/7) * (canvas.height/7))) {
-                const opacity = 1 - distance/((canvas.width/7) * (canvas.height/7));
-                ctx.strokeStyle = particlesArray[a].custom === true && particlesArray[b].custom === true ? `rgba(255,153,0,${opacity})` : `rgba(255,255,255,${opacity})`;
-                ctx.lineWidth = 1;
+
+            if(distance < ((canvas.width/5) * (canvas.height/5)) && particlesArray[a].color === particlesArray[b].color) {
+                const opacity = 1 - distance/((canvas.width/5) * (canvas.height/5));
+                const rgbArr = parseRGB(particlesArray[a].color)
+                ctx.strokeStyle = `rgba(${rgbArr[0]},${rgbArr[1]},${rgbArr[2]},${opacity})`;
+                ctx.lineWidth = 0.5;
                 ctx.beginPath();
                 ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
                 ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
@@ -109,20 +112,23 @@ const connect = () => {
 
         //Connect dots to mouse
         const distanceX = (particlesArray[a].x - mouse.x * 2) * (particlesArray[a].x - mouse.x * 2);
-        const distanceY = (particlesArray[a].y - mouse.y * 2 - (window.scrollY)) * (particlesArray[a].y - mouse.y * 2 - (window.scrollY));
+        const distanceY = (particlesArray[a].y - mouse.y * 2 + (window.canvasTop * 2 || 0)) * (particlesArray[a].y - mouse.y * 2 + (window.canvasTop * 2 || 0));
         const distance = distanceX + distanceY;
 
         if(distance < ((canvas.width/7) * (canvas.height/7))) {
             const opacity = 1 - distance/((canvas.width/7) * (canvas.height/7));
-            ctx.strokeStyle = `rgba(255,255,255,${opacity})`;
-            ctx.lineWidth = 3;
+            const rgbArr = parseRGB(particlesArray[a].color)
+            ctx.strokeStyle = `rgba(${rgbArr[0]},${rgbArr[1]},${rgbArr[2]},${opacity})`;
+            ctx.lineWidth = 1;
             ctx.beginPath();
             ctx.moveTo(particlesArray[a].x , particlesArray[a].y);
-            ctx.lineTo(mouse.x * 2, mouse.y * 2 + (window.scrollY));
+            ctx.lineTo(mouse.x * 2, mouse.y * 2 - (window.canvasTop * 2 || 0));
             ctx.stroke();
         }       
     }
 }
+
+const parseRGB = (rgb) => rgb.replace(/[^\d,]/g, '').split(',');
 
 init();
 animate();
