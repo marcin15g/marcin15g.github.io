@@ -133,8 +133,9 @@ export const projects: Project[] = [
       "Triggered straight from Jira, running on AWS infrastructure.",
       "Added scheduled, recurring agent runs on DynamoDB and EventBridge, with auto-disable on repeated failures and CloudWatch metrics.",
       "Built self-service team access with Cognito sign-in and role-based permissions across services.",
+      "Six trigger channels — web chat, CLI, Jira, Azure DevOps, GitHub PR mentions and cron schedules.",
     ],
-    tags: ["OpenAI Codex", "AI agents", "AWS", "Serverless", "DynamoDB", "Jira"],
+    tags: ["OpenAI Codex", "Bedrock AgentCore", "Azure OpenAI", "AI agents", "AWS", "Serverless", "DynamoDB", "SQS", "Jira"],
   },
   {
     name: "Credit risk platform",
@@ -176,19 +177,19 @@ export const projects: Project[] = [
 export const skills: SkillGroup[] = [
   {
     name: "Frontend",
-    items: ["TypeScript", "JavaScript", "React", "Next.js", "Angular", "NgRx / Redux", "HTML & CSS"],
+    items: ["TypeScript", "JavaScript", "React", "Next.js", "Angular", "NgRx / Redux", "HTML & CSS", "React Testing Library", "Ink (CLI/TUI)"],
   },
   {
     name: "Backend",
-    items: ["Node.js", "Express", "NestJS", "Python", "REST API design", "OpenAPI / contract-first APIs", "SQL", "Jest", "AWS Cognito", "OAuth 2.0 / PKCE", "Role-based access control"],
+    items: ["Node.js", "Express", "NestJS", "Python", "REST API design", "OpenAPI / contract-first APIs", "Event-driven architecture", "Webhooks", "GitHub Apps / GitHub API", "Redis", "Server-Sent Events", "SQL", "Jest", "AWS Cognito", "OAuth 2.0 / PKCE", "Role-based access control"],
   },
   {
     name: "Cloud & delivery",
-    items: ["AWS", "Serverless (AWS Lambda)", "DynamoDB", "EventBridge", "CloudWatch", "GitHub Actions", "Jenkins", "Concourse", "Git", "Jira & Bitbucket", "WebdriverIO", "Cucumber"],
+    items: ["AWS", "Serverless (AWS Lambda)", "DynamoDB", "SQS", "EventBridge", "CloudWatch", "Secrets Manager / SSM", "k6 load testing", "GitHub Actions", "Jenkins", "Concourse", "Git", "Jira & Bitbucket", "WebdriverIO", "Cucumber"],
   },
   {
     name: "AI engineering",
-    items: ["Claude Code", "Codex CLI", "Agentic automation", "AI agent orchestration", "Agent skills & prompt engineering", "AI-driven development"],
+    items: ["Claude Code", "Codex CLI", "Codex SDK", "Amazon Bedrock AgentCore", "Azure OpenAI", "Agentic automation", "AI agent orchestration", "Agent skills & prompt engineering", "LLM usage & cost tracking", "AI-driven development"],
   },
 ];
 
