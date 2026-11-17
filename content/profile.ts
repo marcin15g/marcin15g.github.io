@@ -131,8 +131,10 @@ export const projects: Project[] = [
       "Designed the architecture and delivered the platform on OpenAI Codex.",
       "Automates vulnerability fixes, pull request reviews and small code changes.",
       "Triggered straight from Jira, running on AWS infrastructure.",
+      "Added scheduled, recurring agent runs on DynamoDB and EventBridge, with auto-disable on repeated failures and CloudWatch metrics.",
+      "Built self-service team access with Cognito sign-in and role-based permissions across services.",
     ],
-    tags: ["OpenAI Codex", "AI agents", "AWS", "Jira"],
+    tags: ["OpenAI Codex", "AI agents", "AWS", "Serverless", "DynamoDB", "Jira"],
   },
   {
     name: "Credit risk platform",
@@ -178,15 +180,15 @@ export const skills: SkillGroup[] = [
   },
   {
     name: "Backend",
-    items: ["Node.js", "Express", "NestJS", "Python", "REST API design", "SQL"],
+    items: ["Node.js", "Express", "NestJS", "Python", "REST API design", "OpenAPI / contract-first APIs", "SQL", "Jest", "AWS Cognito", "OAuth 2.0 / PKCE", "Role-based access control"],
   },
   {
     name: "Cloud & delivery",
-    items: ["AWS", "GitHub Actions", "Jenkins", "Concourse", "Git", "Jira & Bitbucket", "WebdriverIO", "Cucumber"],
+    items: ["AWS", "Serverless (AWS Lambda)", "DynamoDB", "EventBridge", "CloudWatch", "GitHub Actions", "Jenkins", "Concourse", "Git", "Jira & Bitbucket", "WebdriverIO", "Cucumber"],
   },
   {
     name: "AI engineering",
-    items: ["Claude Code", "Codex CLI", "Agentic automation", "AI-driven development"],
+    items: ["Claude Code", "Codex CLI", "Agentic automation", "AI agent orchestration", "Agent skills & prompt engineering", "AI-driven development"],
   },
 ];
 
